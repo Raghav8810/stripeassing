@@ -5,7 +5,8 @@ const stripe = require("stripe")(process.env.SECRET_STRIPE_KEY)
 const cors = require("cors");
 
 app.use(express.json())
-app.use(cors({origin:"http://localhost:5173"}));
+app.use(cors());
+//{origin:"http://localhost:5173"}
 app.listen(8000)
 //a
 

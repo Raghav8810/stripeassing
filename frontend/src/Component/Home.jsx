@@ -38,7 +38,7 @@ const Home = () => {
 
   return (
       <div className="moviecom">
-          <img src="../public/The.jpg" alt="" />
+          <img src="/The.jpg" alt="" />
           <div className="innertext">
               <h3 className="title">Batman</h3>
           </div>
