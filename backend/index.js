@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(express.json())
 app.use(cors({origin:"http://localhost:5173"}));
 app.listen(8000)
-
+//a
 
 //routes
 app.post("/checkout",async(req,res)=>{
