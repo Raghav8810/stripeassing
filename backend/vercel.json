@@ -4,7 +4,7 @@
       { "src": "./index.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/" }
+      { "src": "/(.*)", "dest": "/checkout" }
     ],
     "env": {
       "SECRET_STRIPE_KEY": "sk_test_51KnHOKSB5eRVt0qjGw1mf3CdUG0ka45ugaVqyJUVZ8lEgeqkQ0G51SKoZPuPtJ1KVaKfKeFbGIrHwVLrrGJh9sCd00RddlqKkg"

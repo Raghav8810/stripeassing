@@ -7,7 +7,7 @@ const Home = () => {
 
   const PaymentCheckout = async()=>{
       try{
-          const res = await fetch("https://stripeassing.vercel.app",{
+          const res = await fetch("http://localhost:8000/checkout",{
             method: "POST",
             headers:{
               "Content-Type":"application/json",
