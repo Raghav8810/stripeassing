@@ -13,6 +13,9 @@ app.listen(8000)
 //routes
 app.post("/checkout",async(req,res)=>{
     try{
+        
+        console.log(req.body.items);
+        
         const session = await stripe.checkout.sessions.create({
             payment_method_types:["card"],
             mode:"payment",
@@ -21,10 +24,11 @@ app.post("/checkout",async(req,res)=>{
                     price_data:{
                         currency:"inr",
                         product_data:{
-                            name:item.name
+                            name:item.name,
+                            images:[item.image]
+                           
                         },
                         unit_amount:(item.price)*100,
-
 
 
                     },
@@ -32,12 +36,18 @@ app.post("/checkout",async(req,res)=>{
                   
                 }
             }),
+            
             success_url:"http://localhost:5173/success",
             cancel_url:"http://localhost:5173/cancel"
 
         })
+        // console.log(req.body.items);
+        //console.log(session.url);
         res.json({url:session.url})
+       
     }catch(error){
            res.status(500).json({error:error.message})
+           console.log(error);
+
     }
 })
